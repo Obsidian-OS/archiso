@@ -1,15 +1,8 @@
 BUILD_DIR="obsidian_rootfs" # SquashFS generation directory # Below is default packages for an install of arch and this script to work.
 PACKAGES="base linux linux-firmware networkmanager sudo vim nano efibootmgr python squashfs-tools arch-install-scripts base-devel git gptfdisk wget os-prober pv"
 OUTPUT_SFS="system.sfs" # Output SquashFS
-TIMEZONE=""             # Olson Timezone
 HOSTNAME="obsidianbtw"  # Hostname
 YAY_GET="obsidianctl-git"
+NETUPDATE="weSetThisBecauseThisIsTheDefaultSystemImage" # DO NOT SET MANUALLY. USED INTERNALLY.
 ROOT_HAVEPASSWORD="nopassword"    # Set this to anything other than blank to remove the password from the root user.
-CUSTOM_SCRIPTS_DIR=""   # Place where scripts that must run in the SquashFS will run.
 ADMIN_USER="user"           # Creates an user with the 'wheel' group
-ADMIN_DOTFILES=""       # If an admin is created, a git repo that will be cloned to the new user.
-ADMIN_DOTFILES_TYPE=""  # Type of dotfile repo. Requires git in PACKAGES if HOME or CONFIG.
-# HOME - the inside of the repo has data for your home directory (ex: .zshrc, .config, .bashrc)
-# CONFIG - the inside of the repo has data for your .config directory (ex: gtk, fish, kitty, hypr)
-# * - ignore dotfiles repo (can be empty string) and copy dotfiles from that user's home.
-#     recommended: set this to $SUDO_USER if this is being run with sudo.
