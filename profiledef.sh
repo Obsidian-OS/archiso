@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 # shellcheck disable=SC2034
 
-iso_name="obsidian"
+iso_name="obsidianos"
 iso_label="OBSIDIANOS_$(date --date="@${SOURCE_DATE_EPOCH:-$(date +%s)}" +%Y%m)"
-iso_publisher="NEOAPPS <https://github.com/neoapps-dev>"
-iso_application="ObsidianOS Live ISO"
+iso_publisher="ObsidianOS <https://obsidianos.xyz/>"
+iso_application="ObsidianOS Live ISO (KDE)"
 iso_version="$(date --date="@${SOURCE_DATE_EPOCH:-$(date +%s)}" +%Y.%m.%d)"
 install_dir="arch"
 buildmodes=('iso')
