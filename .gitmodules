@@ -10,6 +10,3 @@
 [submodule "obsidian-wizard"]
   path = obsidian-wizard
   url = https://github.com/Obsidian-OS/obsidian-wizard
-[submodule "obsidian-control"]
-	path = obsidian-control
-	url = https://github.com/Obsidian-OS/obsidian-control
