@@ -32,24 +32,23 @@ archiso:
 
 .PHONY: sign
 sign:
-ifeq ($(SKIPSIGN),1)
-    @echo "Skipping ISO signing (SKIPSIGN=1)"
-else
-    @for iso in $(ISO_PATTERN); do \
-        if [ -f "$$iso" ]; then \
+    ifeq ($(SKIPSIGN),1)
+        @echo "Skipping ISO signing (SKIPSIGN=1)"
+    else
+        @for iso in $(ISO_PATTERN); do \
+            if [ -f "$$iso" ]; then \
             if [ -z "$(GPG_KEY)" ]; then \
                 echo "Signing $$iso with default GPG key..."; \
                 gpg --armor --detach-sign "$$iso"; \
             else \
                 echo "Signing $$iso with GPG key $(GPG_KEY)..."; \
                 gpg --armor --detach-sign --local-user $(GPG_KEY) "$$iso"; \
+                fi \
+            else \
+                echo "No ISO files found to sign"; \
             fi \
-        else \
-            echo "No ISO files found to sign"; \
-        fi \
-    done
-endif
-
+        done
+    endif
 .PHONY: clean
 clean:
     rm -rf airootfs/*
