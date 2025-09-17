@@ -53,6 +53,7 @@ jobs:
       run: |
         git add .
         git commit -m "chore: bump"
+        git push origin HEAD:auto-bump-$(date +%Y%m%d)
 
     - name: Create Pull Request
       if: steps.check-changes.outputs.has_changes == 'true'
