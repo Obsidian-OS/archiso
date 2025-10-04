@@ -15,10 +15,11 @@ obsidianctl:
 mkobsidiansfs:
 	@echo "Building mkobsidiansfs..."
 	mkdir -p airootfs/etc/
-	cd mkobsidiansfs && chmod +x mkobsidiansfs
-	cd mkobsidiansfs && ./mkobsidiansfs ../config.mkobsfs
-	cp mkobsidiansfs/system.sfs airootfs/etc/
-	cp mkobsidiansfs/mkobsidiansfs airootfs/usr/bin/
+	cd mkobsidiansfs
+	chmod +x mkobsidian*
+	cp mkobsidiansfs* airootfs/usr/bin
+	./mkobsidiansfs ../config.mkobsfs
+	cd ..
 
 .PHONY: obsidian-wizard
 obsidian-wizard:
@@ -30,25 +31,6 @@ archiso:
 	@echo "Building ObsidianOS ISO Image..."
 	mkarchiso -v -r .
 
-.PHONY: sign
-sign:
-	ifeq ($(SKIPSIGN),1)
-		@echo "Skipping ISO signing (SKIPSIGN=1)"
-	else
-		@for iso in $(ISO_PATTERN); do \
-			if [ -f "$$iso" ]; then \
-			if [ -z "$(GPG_KEY)" ]; then \
-				echo "Signing $$iso with default GPG key..."; \
-				gpg --armor --detach-sign "$$iso"; \
-			else \
-				echo "Signing $$iso with GPG key $(GPG_KEY)..."; \
-				gpg --armor --detach-sign --local-user $(GPG_KEY) "$$iso"; \
-				fi \
-			else \
-				echo "No ISO files found to sign"; \
-			fi \
-		done
-	endif
 .PHONY: clean
 clean:
 	rm -rf airootfs/*
