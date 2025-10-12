@@ -1,10 +1,4 @@
-BUILD_DIR="obsidian_rootfs" # SquashFS generation directory # Below is default packages for an install of arch and this script to work.
-PACKAGES="$PACKAGES wget os-prober pv"
-OUTPUT_SFS="system.sfs" # Output SquashFS
-HOSTNAME="obsidianbtw"  # Hostname
-YAY_GET="obsidianctl-git plugind-git obsidianwall-git obsidian-control"
-NETUPDATE="weSetThisBecauseThisIsTheDefaultSystemImage" # DO NOT SET MANUALLY. USED INTERNALLY.
-ROOT_HAVEPASSWORD="nopassword"    # Set this to anything other than blank to remove the password from the root user.
-ADMIN_USER="user"           # Creates an user with the 'wheel' group
+# Everything else is default in mkobsidiansfs
+NETUPDATE="weSetThisBecauseThisIsTheDefaultSystemImage"
+ROOT_HAVEPASSWORD="nopassword"
 ADMIN_PASSWORD="user"
-POST_INSTALL="systemctl enable plugind"
