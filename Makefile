@@ -18,7 +18,8 @@ mkobsidiansfs:
 	cd mkobsidiansfs && \
 	chmod +x mkobsidian* && \
 	cp mkobsidiansfs* ../airootfs/usr/bin && \
-	./mkobsidiansfs ../config.mkobsfs
+	./mkobsidiansfs ../config.mkobsfs && \
+	cp system.sfs ../airootfs/etc/
 
 .PHONY: obsidian-wizard
 obsidian-wizard:
