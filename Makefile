@@ -2,8 +2,8 @@ ISO_PATTERN = *.iso
 GPG_KEY ?=	   # Use default key unless overridden
 SKIPSIGN ?= 0	# Set to 1 to skip signing
 
-all: obsidianctl mkobsidiansfs build obsidian-wizard midt archiso
-micro: obsidianctl mkobsidiansfs obsidian-wizard midt archiso
+all: obsidianctl mkobsidiansfs build obsidian-wizard mdit archiso
+micro: obsidianctl mkobsidiansfs obsidian-wizard mdit archiso
 
 .PHONY: mdit
 mdit:
