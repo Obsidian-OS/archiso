@@ -2,4 +2,4 @@
 #
 
 # config.json is seperate here so we don't rely on the frontend's config.json.
-CONFIGDOTJSON="file:///usr/local/share/mdit-config.json" exec mdit install
+CONFIGDOTJSON="file:///usr/local/share/mdit-config.json" exec mdit

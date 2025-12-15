@@ -2,7 +2,11 @@ ISO_PATTERN = *.iso
 GPG_KEY ?=	   # Use default key unless overridden
 SKIPSIGN ?= 0	# Set to 1 to skip signing
 
-all: obsidianctl mkobsidiansfs obsidian-wizard archiso sign
+all: obsidianctl mkobsidiansfs obsidian-wizard midt archiso sign
+
+.PHONY: mdit
+	@echo "Copying MDIT..."
+	cp mdit/mdit airootfs/usr/bin/
 
 .PHONY: obsidianctl
 obsidianctl:

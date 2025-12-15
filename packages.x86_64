@@ -130,3 +130,10 @@ fastfetch
 git
 pv
 gpm
+jq
+curl
+wget
+ncurses
+sed
+most
+
