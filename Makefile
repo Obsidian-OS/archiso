@@ -23,13 +23,11 @@ mkobsidiansfs:
 	mkdir -p airootfs/etc/
 	cd mkobsidiansfs && \
 	chmod +x mkobsidian* && \
-	cp mkobsidiansfs* ../airootfs/usr/bin && \
-	./mkobsidiansfs ../config.mkobsfs && \
-	cp system.sfs ../airootfs/etc/
+	cp mkobsidiansfs* ../airootfs/usr/bin
 
 .PHONY: build
 build: mkobsidiansfs
-	cd mkobsidiansfs
+	cd mkobsidiansfs && \
 	./mkobsidiansfs ../config.mkobsfs && \
 	cp system.sfs ../airootfs/etc/
 
