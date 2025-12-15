@@ -25,7 +25,7 @@ jobs:
 
     - name: Git pull in specific directories (skip if not found)
       run: |
-        directories=("obsidianctl/" "mkobsidiansfs/" "obsidian-wizard/" "installer/" "airootfs/usr/preconf")
+        directories=("obsidianctl/" "mkobsidiansfs/" "obsidian-wizard/" "installer/" "airootfs/usr/preconf" "mdit/")
         for dir in "${directories[@]}"; do
           if [ -d "$dir" ] && [ -d "$dir/.git" ]; then
             echo "Processing directory: $dir"
