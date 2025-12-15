@@ -10,3 +10,6 @@
 [submodule "obsidian-wizard"]
   path = obsidian-wizard
   url = https://github.com/Obsidian-OS/obsidian-wizard
+[submodule "mdit"]
+	path = mdit
+	url = https://github.com/theoddcell/MDIT
