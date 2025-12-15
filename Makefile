@@ -30,8 +30,8 @@ mkobsidiansfs:
 .PHONY: build
 build: mkobsidiansfs
 	cd mkobsidiansfs
-        ./mkobsidiansfs ../config.mkobsfs && \
-        cp system.sfs ../airootfs/etc/
+	./mkobsidiansfs ../config.mkobsfs && \
+	cp system.sfs ../airootfs/etc/
 
 .PHONY: obsidian-wizard
 obsidian-wizard:
